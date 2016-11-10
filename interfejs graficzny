@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	background: #222;
+	color: #FFF;
+	font-size: 13px;
+	font-family: Tahoma;
+}
+
+a {
+	color: #333;
+	text-decoration: underline;
+}
+a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+#main {
+	width: 850px;
+	margin: 5px auto;
+	border: 1px solid #333;
+	background: #EEE;
+	color: #000;
+}
+
+#logo {
+	padding: 10px;
+	font-size: 18px;
+	border-bottom: 1px solid #333;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+#left {
+	float: left;
+	width: 170px;
+}
+
+.menu h3 {
+	padding: 5px;
+	font-size: 15px;
+	text-align: center;
+	background: #EFF;
+}
+
+.menu ul {
+	list-style-type: none;
+}
+
+.menu li a {
+	display: block;
+	padding: 5px;
+	background: #EFF;
+	border-top: 1px solid #333;
+	color: #000;
+	text-decoration: none;
+}
+.menu li:last-child a {
+	border-bottom: 1px solid #333;
+}
+.menu li a:hover {
+	background: #FFE;
+	text-decoration: none;
+}
+.menu li.akt a {
+	background: #FF0;
+}
+
+#right {
+	float: right;
+	width: 659px;
+	border-left: 1px solid #333;
+	padding: 10px;
+	min-height: 280px;
+}
+
+#right h1 {
+	font-size: 16px;
+	border-bottom: 2px solid #444;
+}
+
+#right p {
+	margin: 5px;
+	line-height: 22px;
+}
+
+.error {
+	color: #F00;
+	margin: 5px;
+	font-weight: bold;
+}
+
+.success {
+	color: #008000;
+	margin: 5px;
+	font-weight: bold;
+}
+
+input, select {
+	border: 1px solid #CCC;
+	padding: 3px;
+	background: #FFF;
+}
+
+table {
+	margin: 5px auto;
+	border-collapse: collapse;
+}
+table tr.first td {
+	background: #FF0;
+	text-align: center;
+	font-weight: bold;
+}
+
+table td {
+	padding: 3px;
+	border: 1px solid #333;
+}
+
+.center {
+	text-align: center;
+	margin: 10px;
+}
