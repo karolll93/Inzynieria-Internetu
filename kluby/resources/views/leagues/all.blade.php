@@ -9,8 +9,7 @@
                     <tr>
                         <th class="text-xs-center">Liga</th>
                         <th class="text-xs-center">Sezon</th>
-                        <th></th>
-                        <th></th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,6 +17,7 @@
                         <tr>
                             <td>{{ $league->roz_liga }} &raquo; {{ $league->roz_nazwa }}</td>
                             <td class="text-xs-center">{{ $league->roz_sezon }}</td>
+                            <td class="text-xs-center"><a href="{{ route("leagues.table", ['id'=>$league->roz_id]) }}">tabela</a></td>
                             <td class="text-xs-center"><a href="{{ route("leagues.matches", ['id'=>$league->roz_id]) }}">mecze</a></td>
                             <td class="text-xs-center"><a href="{{ route("leagues.goals", ['id'=>$league->roz_id]) }}">strzelcy</a></td>
                         </tr>

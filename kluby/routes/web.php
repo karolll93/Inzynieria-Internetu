@@ -13,10 +13,11 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/leagues', 'LeagueController@all')->name('leagues');
-
 Route::get('/leagues/{id}/matches', 'MatchController@league')->name('leagues.matches');
 Route::get('/leagues/{id}/goals', 'GoalController@league')->name('leagues.goals');
+Route::get('/leagues/{id}/table', 'TableController@league')->name('leagues.table');
+
+Route::get('/leagues', 'LeagueController@all')->name('leagues');
 
 Route::match(['get', 'post'], '/login', 'UserController@login')->name('login')->middleware('guest');
 

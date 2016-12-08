@@ -2,7 +2,15 @@
 
 @section('left')
 
-    <h3>Rozgrywka: {{ $league->roz_liga }} - {{ $league->roz_nazwa }} (sezon {{ $league->roz_sezon }})</h3>
+    <div class="float-xs-right">
+        <div class="btn-group">
+                <a href="{{ route("leagues") }}" class="btn btn-warning btn-sm">powrót do rozgrywek</a>
+                <a href="{{ route("leagues.table", ["id"=>$league->roz_id])}}" class="btn btn-primary btn-sm">tabela</a>
+                <a href="{{ route("leagues.goals", ["id"=>$league->roz_id])}}" class="btn btn-primary btn-sm">strzelcy</a>
+        </div>
+    </div>
+
+    <h3>Rozgrywka &raquo; <small>{{ $league->roz_liga }} - {{ $league->roz_nazwa }} (sezon {{ $league->roz_sezon }})</small></h3>
 
     @if(count($matches) > 0)
         <div class="table-responsive">
