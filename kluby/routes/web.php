@@ -38,5 +38,18 @@ Route::group(['middleware' => ['dashboard']], function () {
     Route::match(['get', 'post'], '/dashboard/clubs/edit/{id}', 'DashboardClubController@edit')->name('dashboard.clubs.edit');
     Route::get('/dashboard/clubs/delete/{id}', 'DashboardClubController@delete')->name('dashboard.clubs.delete');
 
+    Route::get('/dashboard/leagues', 'DashboardLeagueController@index')->name('dashboard.leagues');
+    Route::match(['get', 'post'], '/dashboard/leagues/add', 'DashboardLeagueController@add')->name('dashboard.leagues.add');
+    Route::match(['get', 'post'], '/dashboard/leagues/edit/{id}', 'DashboardLeagueController@edit')->name('dashboard.leagues.edit');
+    Route::get('/dashboard/leagues/delete/{id}', 'DashboardLeagueController@delete')->name('dashboard.leagues.delete');
+
+    Route::get('/dashboard/leagues/{id}/clubs-players/{club_id}/delete/{player_id}', 'DashboardLeagueController@clubs_players_delete')->name('dashboard.leagues.clubs.players.delete');
+    Route::match(['get', 'post'], '/dashboard/leagues/{id}/clubs-players/{club_id}', 'DashboardLeagueController@clubs_players')->name('dashboard.leagues.clubs.players');
+
+    Route::get('/dashboard/leagues/{id}/clubs/delete/{league_id}', 'DashboardLeagueController@clubs_delete')->name('dashboard.leagues.clubs.delete');
+    Route::match(['get', 'post'], '/dashboard/leagues/{id}/clubs', 'DashboardLeagueController@clubs')->name('dashboard.leagues.clubs');
+    
+    Route::get('/dashboard/leagues/{id}/promotions/delete/{club_id}', 'DashboardLeagueController@promotions_delete')->name('dashboard.leagues.promotions.delete');
+    Route::match(['get', 'post'], '/dashboard/leagues/{id}/promotions', 'DashboardLeagueController@promotions')->name('dashboard.leagues.promotions');
 
 });
