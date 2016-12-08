@@ -1,0 +1,29 @@
+body {
+    font-size: 15px;
+}
+
+#content {
+    margin-top: 25px;
+}
+
+#content h3 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.anchor-card a {
+    color: #fff;
+}
+
+.required {
+    color: #f00000;
+}
+
+#right h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal-footer button {
+    margin: 0 5px;
+}
