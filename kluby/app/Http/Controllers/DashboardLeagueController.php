@@ -133,6 +133,7 @@ class DashboardLeagueController extends Controller {
             }
         }
 
+        $players_count = [];
         if (count($clubs) > 0) {
             foreach ($clubs as $club) {
                 $p_db = DB::select("select count(*) as c from klub_zawodnicy WHERE kzaw_klub = ?", [$club->rk_id]);

@@ -24,6 +24,10 @@ body {
     margin-bottom: 20px;
 }
 
+#right img {
+    max-width: 100%;
+}
+
 .modal-footer button {
     margin: 0 5px;
 }

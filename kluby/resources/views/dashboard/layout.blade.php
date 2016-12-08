@@ -17,6 +17,7 @@
                     <a href="{{ route("dashboard") }}" class="list-group-item">strona główna</a>
                     <a href="{{ route("dashboard.clubs") }}" class="list-group-item">kluby</a>
                     <a href="{{ route("dashboard.countries") }}" class="list-group-item">państwa</a>
+                    <a href="{{ route("dashboard.matches") }}" class="list-group-item">mecze</a>
                     <a href="{{ route("dashboard.leagues") }}" class="list-group-item">rozgrywki</a>
                     <a href="{{ route("dashboard.players") }}" class="list-group-item">zawodnicy</a>
                 </div>

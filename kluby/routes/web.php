@@ -15,6 +15,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/leagues', 'LeagueController@all')->name('leagues');
 
+Route::get('/leagues/{id}/matches', 'MatchController@league')->name('leagues.matches');
+Route::get('/leagues/{id}/goals', 'GoalController@league')->name('leagues.goals');
+
 Route::match(['get', 'post'], '/login', 'UserController@login')->name('login')->middleware('guest');
 
 Route::get('/logout', 'UserController@logout')->name('logout')->middleware('auth');
@@ -51,5 +54,14 @@ Route::group(['middleware' => ['dashboard']], function () {
     
     Route::get('/dashboard/leagues/{id}/promotions/delete/{club_id}', 'DashboardLeagueController@promotions_delete')->name('dashboard.leagues.promotions.delete');
     Route::match(['get', 'post'], '/dashboard/leagues/{id}/promotions', 'DashboardLeagueController@promotions')->name('dashboard.leagues.promotions');
+
+    Route::get('/dashboard/matches/{id}/goals/delete/{goal_id}', 'DashboardMatchController@goals_delete')->name('dashboard.matches.goals.delete');
+    Route::match(['get', 'post'], '/dashboard/matches/{id}/goals/add', 'DashboardMatchController@goals_add')->name('dashboard.matches.goals.add');
+    Route::get('/dashboard/matches/{id}/goals', 'DashboardMatchController@goals')->name('dashboard.matches.goals');
+
+    Route::get('/dashboard/matches', 'DashboardMatchController@index')->name('dashboard.matches');
+    Route::match(['get', 'post'], '/dashboard/matches/add', 'DashboardMatchController@add')->name('dashboard.matches.add');
+    Route::match(['get', 'post'], '/dashboard/matches/edit/{id}', 'DashboardMatchController@edit')->name('dashboard.matches.edit');
+    Route::get('/dashboard/matches/delete/{id}', 'DashboardMatchController@delete')->name('dashboard.matches.delete');
 
 });

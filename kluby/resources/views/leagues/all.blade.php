@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('theme')
 
-@section('content')
+@section('left')
 
     @if(count($leagues) > 0)
         <div class="table-responsive">
@@ -18,8 +18,8 @@
                         <tr>
                             <td>{{ $league->roz_liga }} &raquo; {{ $league->roz_nazwa }}</td>
                             <td class="text-xs-center">{{ $league->roz_sezon }}</td>
-                            <td class="text-xs-center"></td>
-                            <td class="text-xs-center"></td>
+                            <td class="text-xs-center"><a href="{{ route("leagues.matches", ['id'=>$league->roz_id]) }}">mecze</a></td>
+                            <td class="text-xs-center"><a href="{{ route("leagues.goals", ['id'=>$league->roz_id]) }}">strzelcy</a></td>
                         </tr>
                     @endforeach
                 </tbody>
